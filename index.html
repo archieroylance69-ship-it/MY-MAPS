@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>My Maps</title>
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     TOP BAR
+========================================= -->
+
+<header class="topbar">
+
+    <div class="logo">
+        <span>MY</span> MAPS
+    </div>
+
+
+    <div class="search-box">
+
+        <input
+            id="searchInput"
+            type="text"
+            placeholder="Search places..."
+            autocomplete="off"
+        >
+
+        <button
+            id="searchBtn"
+            type="button"
+        >
+            Search
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================
+     SIDEBAR
+========================================= -->
+
+<aside class="sidebar">
+
+
+    <h2>Directions</h2>
+
+
+    <!-- START LOCATION -->
+
+    <label for="startInput">
+        Starting point
+    </label>
+
+
+    <div class="location-input">
+
+        <input
+            id="startInput"
+            type="text"
+            placeholder="e.g. 3 Beech Avenue"
+            autocomplete="off"
+            spellcheck="false"
+        >
+
+
+        <button
+            id="startRecommendBtn"
+            type="button"
+            title="Show suggestions"
+        >
+            ★
+        </button>
+
+    </div>
+
+
+    <!-- START SUGGESTIONS -->
+
+    <div
+        id="startRecommendations"
+        class="recommendation-menu hidden"
+    ></div>
+
+
+
+    <!-- DESTINATION -->
+
+    <label for="destinationInput">
+        Destination
+    </label>
+
+
+    <div class="location-input">
+
+        <input
+            id="destinationInput"
+            type="text"
+            placeholder="e.g. Manchester Airport"
+            autocomplete="off"
+            spellcheck="false"
+        >
+
+
+        <button
+            id="destinationRecommendBtn"
+            type="button"
+            title="Show suggestions"
+        >
+            ★
+        </button>
+
+    </div>
+
+
+    <!-- DESTINATION SUGGESTIONS -->
+
+    <div
+        id="destinationRecommendations"
+        class="recommendation-menu hidden"
+    ></div>
+
+
+
+    <!-- CALCULATE -->
+
+    <button
+        id="routeBtn"
+        class="main-btn"
+        type="button"
+    >
+        Calculate route
+    </button>
+
+
+
+    <!-- NAVIGATION -->
+
+    <button
+        id="navigateBtn"
+        class="nav-btn"
+        type="button"
+        disabled
+    >
+        Start navigation
+    </button>
+
+
+
+    <!-- VOICE TEST -->
+
+    <button
+        id="voiceTestBtn"
+        class="voice-btn"
+        type="button"
+    >
+        🔊 Test navigation voice
+    </button>
+
+
+
+    <!-- ROUTE INFORMATION -->
+
+    <div
+        id="routeInfo"
+        class="route-info"
+    >
+        Enter your starting point
+        and destination.
+    </div>
+
+
+</aside>
+
+
+
+<!-- =========================================
+     MAP
+========================================= -->
+
+<main id="map"></main>
+
+
+
+<!-- =========================================
+     TURN CARD
+========================================= -->
+
+<div
+    id="turnCard"
+    class="turn-card hidden"
+>
+
+    <div id="turnIcon">
+        ↑
+    </div>
+
+
+    <div>
+
+        <div id="turnText">
+            Continue
+        </div>
+
+
+        <small id="turnDistance">
+            --
+        </small>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================
+     SPEEDOMETER
+========================================= -->
+
+<div
+    id="speedometer"
+    class="speedometer"
+>
+
+    <div class="speed-content">
+
+
+        <div
+            id="speed"
+            class="speed"
+        >
+            0
+        </div>
+
+
+        <div class="unit">
+            MPH
+        </div>
+
+
+        <div
+            id="speedLimit"
+            class="speed-limit"
+        >
+            LIMIT --
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================
+     GPS STATUS
+========================================= -->
+
+<div
+    id="gpsStatus"
+    class="gps-status"
+>
+    GPS: waiting...
+</div>
+
+
+
+<!-- =========================================
+     LEAFLET
+========================================= -->
+
+<script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+></script>
+
+
+<!-- =========================================
+     YOUR SCRIPT
+========================================= -->
+
+<script src="script.js"></script>
+
+
+</body>
+</html>
